@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :contacts
+  resources :choices
+  resources :likes
+  resources :people
+  resources :products
+  resources :orders
   get 'static_pages/list'
   get 'static_pages/pages'
   get 'static_pages/swipe'

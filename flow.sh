@@ -20,16 +20,29 @@ bundle install --without production
  # git push --force --set-upstream origin master
  git push -u origin --all
 
-rails destroy scaffold Person
-rails destroy scaffold Order
-rails destroy scaffold Product
+rails g scaffold order
+rails g scaffold product name:string
+rails g scaffold person name:string feature:string
 
-rails generate scaffold Person name:string feature:string history:text fellows:text
-rails generate scaffold Order time:datetime group:text drinks:text
-rails generate scaffold Product name:string
+rails g scaffold like person_id:integer product_id:integer count:integer
+rails g scaffold choice order_id:integer person_id:integer product_id:integer
+rails g scaffold contact person_id:integer person_id:integer count:integer
+
+
+
 
 bundle exec rake db:migrate
 
 rails server -b localhost -p 3000
 
 rails generate controller StaticPages jqm
+
+
+
+
+
+
+
+
+
+ group:text drinks:text

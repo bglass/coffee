@@ -1,0 +1,25 @@
+h1 Listing choices
+
+table
+  thead
+    tr
+      th Order
+      th Person
+      th Product
+      th
+      th
+      th
+
+  tbody
+    - @choices.each do |choice|
+      tr
+        td = choice.order_id
+        td = choice.person_id
+        td = choice.product_id
+        td = link_to 'Show', choice
+        td = link_to 'Edit', edit_choice_path(choice)
+        td = link_to 'Destroy', choice, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Choice', new_choice_path

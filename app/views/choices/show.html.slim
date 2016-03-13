@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Order:
+  = @choice.order_id
+p
+  strong Person:
+  = @choice.person_id
+p
+  strong Product:
+  = @choice.product_id
+
+= link_to 'Edit', edit_choice_path(@choice)
+'|
+= link_to 'Back', choices_path
