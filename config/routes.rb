@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'static_pages/list'
+  get 'static_pages/pages'
+  get 'static_pages/swipe'
+  get 'static_pages/order'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
