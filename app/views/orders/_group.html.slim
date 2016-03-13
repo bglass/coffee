@@ -4,18 +4,17 @@ div data-role="header"
   h1 Group
 
 
-div data-role="content"
+div data-role="content" id="groupButtons"
 
   - group = %w[Thomas Alexia Agustin]
 
   - group.each do |name|
-    div  id="grouplist"
-      - # button class="ui-btn ui-corner-all" #{person.name} (#{person.feature})
-      button class="ui-btn ui-corner-all" = name
+    - # button class="ui-btn ui-corner-all" #{person.name} (#{person.feature})
+    button class="ui-btn ui-corner-all" = name
 
 
 
-  a href="#people" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-mini" onclick="addAnother()" Add
+  a id="add" href="#peoplePanel" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-mini" Add
 
 div data-role="footer"
   h4 Page Footer
