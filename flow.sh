@@ -16,7 +16,7 @@ bundle install --without production
  git init
  git add -A
  git commit -m "Initialize repository"
- git remote add origin git@github.com:bglass/coffee.git
+ git remote add origin git@github.com:bglass/cortado.git
  # git push --force --set-upstream origin master
  git push -u origin --all
 

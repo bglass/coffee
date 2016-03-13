@@ -3,15 +3,19 @@
 div data-role="header"
   h1 Group
 
-.ui-content role="main"
-  h2 group
 
 div data-role="content"
-  p Who wants a coffee??
 
-  p I have an id of "two" on my page container. I'm the second page container in this multi-page template.
+  - group = %w[Thomas Alexia Agustin]
 
-  a href="#people" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-mini" Add
+  - group.each do |name|
+    div  id="grouplist"
+      - # button class="ui-btn ui-corner-all" #{person.name} (#{person.feature})
+      button class="ui-btn ui-corner-all" = name
+
+
+
+  a href="#people" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-mini" onclick="addAnother()" Add
 
 div data-role="footer"
   h4 Page Footer

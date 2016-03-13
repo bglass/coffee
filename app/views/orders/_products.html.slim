@@ -1,4 +1,7 @@
 div data-role="panel" id="products" data-position="right" data-display="overlay"  data-theme="b"
-  ul
+  form
+    input data-type="search" id="filterProducts"
+
+  div data-role="controlgroup" data-filter="true" data-input="#filterProducts"
     - @products.each do |product|
-      button class="ui-btn ui-corner-all" = product.name
+      a href="#" class="ui-btn ui-shadow ui-corner-all" = product.name

@@ -1,3 +1,8 @@
 div data-role="panel" id="people" data-position="right" data-display="overlay"  data-theme="b"
-  - @people.each do |person|
-    button class="ui-btn ui-corner-all" #{person.name} (#{person.feature})
+
+  form
+    input data-type="search" id="filterPeople"
+
+  div data-role="controlgroup" data-filter="true" data-input="#filterPeople"
+    - @people.each do |person|
+      a href="#" class="ui-btn ui-shadow ui-corner-all"  #{person.name} (#{person.feature})

@@ -4,9 +4,14 @@ div data-role="header"
   h1 Drinks
 
 .ui-content role="main"
-  h2 Two (2)
 
-  p Who gets what?
+  - group = %w[Thomas Alexia Agustin]
+
+  - group.each do |name|
+    - # button class="ui-btn ui-corner-all" #{person.name} (#{person.feature})
+    button class="ui-btn ui-corner-all" = name
+
+
 
   a href="#products" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-mini" Choose
 
