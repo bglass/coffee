@@ -5,15 +5,11 @@ div data-role="header"
 
 .ui-content role="main"
 
-  - group = %w[Thomas Alexia Agustin]
-
-  - group.each do |name|
-    - # button class="ui-btn ui-corner-all" #{person.name} (#{person.feature})
-    button class="ui-btn ui-corner-all" = name
-
-
-
-  a href="#products" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-mini" Choose
+  div id="choiceButtons"
+    - group = %w[Thomas Alexia Agustin]
+    - group.each_with_index do |name, i|
+      - # button class="ui-btn ui-corner-all" #{person.name} (#{person.feature})
+      button class="ui-btn ui-corner-all" id="p#{i}" name="#{name}" = name
 
 div data-role="footer"
   h4 Page Footer
