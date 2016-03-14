@@ -1,20 +1,22 @@
 = render :partial => "people"
 
+link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"
+script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"
+
+
 div data-role="header"
   h1 Group
 
 
+a id="add" href="#peoplePanel" class="ui-btn ui-corner-all" +
+
+
 div data-role="content" id="groupButtons"
-
   - group = %w[Thomas Alexia Agustin]
-
   - group.each do |name|
     - # button class="ui-btn ui-corner-all" #{person.name} (#{person.feature})
     button class="ui-btn ui-corner-all" = name
 
-
-
-  a id="add" href="#peoplePanel" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-btn-mini" Add
 
 div data-role="footer"
   h4 Page Footer
