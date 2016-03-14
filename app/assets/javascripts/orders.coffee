@@ -18,9 +18,22 @@ $ ->
     button = window.choosing_button
     drink  = @textContent
     name   = button.textContent
-    window.coffee_choice = {} unless window.coffee_choice
+    window.coffee_choice or= {} 
     window.coffee_choice[name] = drink
-
     button.textContent = "#{button.name}: #{drink}"
     $.mobile.activePage.find('#products').panel("close")
+    return
+
+  $('#done').on 'click', (event) ->
+    amount = {}
+    for name, drink of window.coffee_choice
+      amount[drink] = 0 unless amount[drink]
+      amount[drink] += 1
+    list = ""
+    for drink, quantity of amount
+      list += "<li>#{quantity} #{drink}</li>"
+
+    $('#summaryList').html(list)
+
+    location.hash = "summary"
     return

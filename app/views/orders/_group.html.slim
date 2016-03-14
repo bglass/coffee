@@ -5,10 +5,10 @@ script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"
 
 
 div data-role="header"
-  h1 Group
+  h1 Coffee me 3!
 
-
-a id="add" href="#peoplePanel" class="ui-btn ui-corner-all" +
+button id="done" href="#peoplePanel" class="ui-btn ui-corner-all" Done
+a      id="add"  href="#peoplePanel" class="ui-btn ui-corner-all" +
 
 
 div data-role="content" id="groupButtons"
@@ -16,7 +16,3 @@ div data-role="content" id="groupButtons"
   - group.each do |name|
     - # button class="ui-btn ui-corner-all" #{person.name} (#{person.feature})
     button class="ui-btn ui-corner-all" = name
-
-
-div data-role="footer"
-  h4 Page Footer
