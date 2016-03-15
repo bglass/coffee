@@ -1,7 +1,10 @@
 div data-role="panel" id="products" data-position="right" data-display="overlay"  data-theme="b"
+  button id="remove"  class="ui-btn ui-corner-all" Remove
+
   form
     input data-type="search" id="filterProducts"
 
   div data-role="controlgroup" data-filter="true" data-input="#filterProducts" id="productButtons"
+    button class="ui-btn ui-corner-all" nothing
     - @products.each do |product|
       button class="ui-btn ui-shadow ui-corner-all" = product.name
