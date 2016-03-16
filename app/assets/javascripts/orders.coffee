@@ -31,7 +31,7 @@ $ ->
     for name, drink of window.coffee_choice
       amount[drink] = 0 unless amount[drink]
       amount[drink] += 1
-      
+
     list = ""
     for drink, quantity of amount
       list += "<li>#{quantity} #{drink}</li>"
@@ -39,4 +39,9 @@ $ ->
     $('#summaryList').html(list)
 
     location.hash = "summary"
+
+    data = {}
+    data['order'] = window.coffee_choice
+    $.post("/static_pages/datadrop", data);
+
     return

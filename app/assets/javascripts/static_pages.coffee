@@ -13,3 +13,14 @@
 #   r = $("<input type='button' value='#{@textContent}'>")
 #   $('div#groupButtons').append r
 #   return
+
+$ ->
+  $('#text-1').on 'input propertychange paste', ->
+    # xhttp = new XMLHttpRequest
+    # xhttp.open 'POST', "datadrop", true
+    # xhttp.send(@value)
+    data = {}
+    data['title'] = @value
+    data['subtitle'] = "be happy"
+    $.post("datadrop", data);
+    return
