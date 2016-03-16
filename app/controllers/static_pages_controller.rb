@@ -8,6 +8,7 @@ class StaticPagesController < ApplicationController
          render :json => true
        end
      end
+     
    end
 
 

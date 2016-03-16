@@ -1,0 +1,15 @@
+- adding people:
+  - check exist -> toggle add/remove function
+  - reflect state w/ panel button color
+
+- choosing product:
+  - do not close panel, instead
+  - jump to next person
+
+- color people according to the status of their choice: unknown / guess / chosen
+
+- disable done until everybody has a choice or guess
+
+- pocess order on server side
+
+- enter real products
