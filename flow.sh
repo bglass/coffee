@@ -19,6 +19,8 @@ bundle install --without production
  git remote add origin git@github.com:bglass/cortado.git
  # git push --force --set-upstream origin master
  git push -u origin --all
+ # git config --global credential.helper cache
+ # git config --global credential.helper 'cache --timeout=3600'
 
 rails g scaffold order
 rails g scaffold product name:string
