@@ -1,4 +1,6 @@
 = render :partial => "people"
+= render :partial => "products"
+
 
 link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"
 script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"
@@ -12,7 +14,7 @@ a      id="add"  href="#peoplePanel" class="ui-btn ui-corner-all" +
 
 
 div data-role="content" id="groupButtons"
-  - group = %w[Thomas Alexia Agustin]
-  - group.each do |name|
+  - group = %w[]
+  - group.each_with_index do |name, i|
     - # button class="ui-btn ui-corner-all" #{person.name} (#{person.feature})
-    button class="ui-btn ui-corner-all" = name
+    button class="ui-btn ui-corner-all" id="p#{i}" name="#{name}" = name
