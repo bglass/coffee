@@ -38,11 +38,5 @@ rails server -b localhost -p 3000
 rails generate controller StaticPages jqm
 
 
-
-
-
-
-
-
-
- group:text drinks:text
+current! 2
+3
