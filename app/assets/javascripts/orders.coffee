@@ -27,10 +27,9 @@ $ ->
   $('#productButtons').on 'click', 'button', (event) ->
     button = window.active_person_button
     drink  = @textContent
-    window.coffee_choice or= {} 
-    window.coffee_choice[button.name] = drink
-    button.textContent = "#{button.name}: #{drink}"
+    button.setAttribute('choice', drink)
     button.setAttribute('ok', '')
+    button.textContent = "#{button.name}: #{drink}"
 
     window.active_person_button = button.nextSibling
     if window.active_person_button
@@ -40,9 +39,15 @@ $ ->
     return
 
   $('#done').on 'click', (event) ->
-    amount = {}
-    for name, drink of window.coffee_choice
-      amount[drink] = 0 unless amount[drink]
+
+    amount  = {}
+    choice  = {}
+
+    people = $("button#group")
+    for person in people
+      drink = person.getAttribute('choice')
+      choice[person.name] = drink
+      amount[drink] or= 0
       amount[drink] += 1
 
     list = ""
@@ -54,7 +59,7 @@ $ ->
     location.hash = "summary"
 
     data = {}
-    data['order'] = window.coffee_choice
+    data['order'] = choice
     $.post("/static_pages/datadrop", data);
 
     return

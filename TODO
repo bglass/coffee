@@ -7,17 +7,18 @@
   + jump to next person
   + focus next person
 
+  + delete choice when removing people
+
+  + color people according to the status of their choice: unknown / guess / chosen
 <---
 
-
-- color people according to the status of their choice: unknown / guess / chosen
 
 - disable done until everybody has a choice or guess
 
 - process order on server side
 
+- guess drinks
+
 - enter real products
 
 - Dutch mode
-
-- delete choice when removing people
