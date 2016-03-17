@@ -4,5 +4,5 @@ div data-role="panel" id="peoplePanel" data-position="left" data-display="overla
     input data-type="search" id="filterPeople"
 
   div id="peopleButtons" data-role="controlgroup" data-filter="true" data-input="#filterPeople"
-    - @people.each do |person|
-      button href="#" class="ui-btn ui-shadow ui-corner-all"  #{person.name} (#{person.feature})
+    - @people.sort_by{|p| p.name}.each do |person|
+      button href="#" class="ui-btn ui-shadow ui-corner-all" id="person" name=person.name #{person.name} (#{person.feature})

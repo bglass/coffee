@@ -1,30 +1,40 @@
 $ ->
   $('#peopleButtons').on 'click', 'button', (event) ->
-    button = $("<button name='#{@textContent}'>#{@textContent}</button>")
-    $('div#groupButtons').append(button).trigger('create')
+    window.actual_group or= {}
+    group = window.actual_group
+
+    group[@name] = !group[@name]
+
+    if group[@name]
+      @.setAttribute('highlight', '')
+      button = $("<button id='group' name='#{@name}'>#{@textContent}</button>")
+      $('div#groupButtons').append(button).trigger('create')
+    else
+      @.removeAttribute('highlight')
+      $("[id='group'][name='#{@name}']").remove()
+
+
+
     return
 
   $('#remove').on 'click', (event) ->
-    window.choosing_button.remove()
+    window.active_person_button.remove()
     $.mobile.activePage.find('#products').panel("close")
     return
 
   $('#groupButtons').on 'click', 'button', (event) ->
     $.mobile.activePage.find('#products').panel("open")
-    window.choosing_button = this
+    window.active_person_button = this
     return
 
   $('#productButtons').on 'click', 'button', (event) ->
-    button = window.choosing_button
+    button = window.active_person_button
     drink  = @textContent
     window.coffee_choice or= {} 
     window.coffee_choice[button.name] = drink
     button.textContent = "#{button.name}: #{drink}"
     $.mobile.activePage.find('#products').panel("close")
     return
-
-# id="p#{i}" name="#{name}"
-
 
   $('#done').on 'click', (event) ->
     amount = {}
