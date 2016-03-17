@@ -2,7 +2,6 @@ $ ->
   $('#peopleButtons').on 'click', 'button', (event) ->
     window.actual_group or= {}
     group = window.actual_group
-
     group[@name] = !group[@name]
 
     if group[@name]
@@ -12,8 +11,6 @@ $ ->
     else
       @.removeAttribute('highlight')
       $("[id='group'][name='#{@name}']").remove()
-
-
 
     return
 
@@ -33,7 +30,9 @@ $ ->
     window.coffee_choice or= {} 
     window.coffee_choice[button.name] = drink
     button.textContent = "#{button.name}: #{drink}"
-    $.mobile.activePage.find('#products').panel("close")
+    # $.mobile.activePage.find('#products').panel("close")
+
+    alert $(button).find('#David').name
     return
 
   $('#done').on 'click', (event) ->
