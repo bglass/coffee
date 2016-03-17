@@ -2,11 +2,13 @@
   + check exist -> toggle add/remove function
   + reflect state w/ panel button color
 
++ choosing product:
+  + do not close panel, instead
+  + jump to next person
+  + focus next person
+
 <---
 
-- choosing product:
-  - do not close panel, instead
-  - jump to next person
 
 - color people according to the status of their choice: unknown / guess / chosen
 
@@ -17,3 +19,5 @@
 - enter real products
 
 - Dutch mode
+
+- delete choice when removing people
