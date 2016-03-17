@@ -2,6 +2,8 @@
   + check exist -> toggle add/remove function
   + reflect state w/ panel button color
 
+<---
+
 - choosing product:
   - do not close panel, instead
   - jump to next person

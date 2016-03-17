@@ -30,9 +30,13 @@ $ ->
     window.coffee_choice or= {} 
     window.coffee_choice[button.name] = drink
     button.textContent = "#{button.name}: #{drink}"
-    # $.mobile.activePage.find('#products').panel("close")
 
-    alert $(button).find('#David').name
+    window.active_person_button = button.nextSibling
+    if window.active_person_button
+      window.active_person_button.focus()
+    else
+      $.mobile.activePage.find('#products').panel("close")
+
     return
 
   $('#done').on 'click', (event) ->
