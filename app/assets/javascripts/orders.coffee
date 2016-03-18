@@ -1,7 +1,5 @@
 $ ->
   $('#peopleButtons').on 'click', 'button', (event) ->
-    window.actual_group or= {}
-    group = window.actual_group
     group[@name] = !group[@name]
 
     if group[@name]
@@ -14,30 +12,42 @@ $ ->
 
     return
 
+$ ->
   $('#remove').on 'click', (event) ->
-    window.active_person_button.remove()
-    $.mobile.activePage.find('#products').panel("close")
-    return
+    actor = $('#actor')
+    button = actor.data('button')
+    nextActor(button)
+    button.remove()
 
   $('#groupButtons').on 'click', 'button', (event) ->
     $.mobile.activePage.find('#products').panel("open")
-    window.active_person_button = this
+    setActor($(@))
     return
 
-  $('#productButtons').on 'click', 'button', (event) ->
-    button = window.active_person_button
-    drink  = @textContent
-    button.setAttribute('choice', drink)
-    button.setAttribute('ok', '')
-    button.textContent = "#{button.name}: #{drink}"
+  setActor = (button) ->
+    actor = $('#actor')
+    actor.text(button[0].name)
+    actor.data('button', button)
+    return actor
 
-    window.active_person_button = button.nextSibling
-    if window.active_person_button
-      window.active_person_button.focus()
+  nextActor = (button) ->
+    nextButton = button[0].nextSibling
+    if nextButton
+      setActor($(nextButton))
+      nextButton.focus()
     else
       $.mobile.activePage.find('#products').panel("close")
-    return
 
+  $('#productButtons').on 'click', 'button', (event) ->
+    drink  = @textContent
+    actor  = $('#actor')
+    button = actor.data('button')
+    button.text("#{button[0].name}: #{drink}")
+    button[0].setAttribute('choice', drink)
+    button[0].setAttribute('confirm', '')
+    nextActor(button)
+
+$ ->
   $('#done').on 'click', (event) ->
 
     amount  = {}

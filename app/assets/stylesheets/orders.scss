@@ -52,4 +52,5 @@ body {
 
 .ui-btn.ui-shadow.ui-corner-all{color: gray;}
 .ui-btn.ui-shadow.ui-corner-all[highlight]{color: orange;}
-.ui-btn.ui-shadow.ui-corner-all[ok]{color: green;}
+.ui-btn.ui-shadow.ui-corner-all[choice]{color: black;}
+.ui-btn.ui-shadow.ui-corner-all[choice][confirm]{color: green;}

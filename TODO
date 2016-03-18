@@ -10,8 +10,12 @@
   + delete choice when removing people
 
   + color people according to the status of their choice: unknown / guess / chosen
-<---
 
++ show person name as header in product choice
+
++ remove global variables
+
+<---
 
 - disable done until everybody has a choice or guess
 
