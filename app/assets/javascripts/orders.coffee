@@ -19,6 +19,17 @@ $ ->
     nextActor(button)
     button.remove()
 
+  $('#unknown').on 'click', (event) ->
+    actor  = $('#actor')
+    button = actor.data('button')
+    button.text(button[0].name)
+    button[0].setAttribute('choice', drink)
+    button[0].setAttribute('confirm', '')
+    nextActor(button)
+
+
+
+
   $('#groupButtons').on 'click', 'button', (event) ->
     $.mobile.activePage.find('#products').panel("open")
     setActor($(@))
