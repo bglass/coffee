@@ -15,12 +15,12 @@
 
 + remove global variables
 
-<---
++ disable done until everybody has a choice or guess
 
-- disable done until everybody has a choice or guess
+<---
 
 - process order on server side
   - guess drinks
 
-- enter real products
+- enter real products, (bilingual+price)
   - Dutch mode

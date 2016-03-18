@@ -9,26 +9,24 @@ $ ->
     else
       @.removeAttribute('highlight')
       $("[id='group'][name='#{@name}']").remove()
-
+    checkAllDone()
     return
 
-$ ->
   $('#remove').on 'click', (event) ->
     actor = $('#actor')
     button = actor.data('button')
     nextActor(button)
     button.remove()
+    checkAllDone()
 
   $('#unknown').on 'click', (event) ->
     actor  = $('#actor')
     button = actor.data('button')
     button.text(button[0].name)
-    button[0].setAttribute('choice', drink)
-    button[0].setAttribute('confirm', '')
+    button[0].removeAttribute('confirm')
+    button[0].removeAttribute('choice')
+    checkAllDone()
     nextActor(button)
-
-
-
 
   $('#groupButtons').on 'click', 'button', (event) ->
     $.mobile.activePage.find('#products').panel("open")
@@ -49,6 +47,29 @@ $ ->
     else
       $.mobile.activePage.find('#products').panel("close")
 
+  checkAllDone = -> 
+    # alert "checking"
+    doneButton = $("#done")
+    people     = $("button#group")
+    done = !!(people.length > 0)
+
+    for person in people
+      choice = person.getAttribute('choice')
+      done = false unless choice
+
+    # if done
+    #   doneButton[0].removeAttribute('disabled')
+    # else
+    #   doneButton[0].setAttribute('disabled', 'disabled')
+
+    if done
+      doneButton[0].removeAttribute('disabled')
+    else
+      doneButton[0].setAttribute('disabled', 'disabled')
+
+
+
+
   $('#productButtons').on 'click', 'button', (event) ->
     drink  = @textContent
     actor  = $('#actor')
@@ -56,6 +77,7 @@ $ ->
     button.text("#{button[0].name}: #{drink}")
     button[0].setAttribute('choice', drink)
     button[0].setAttribute('confirm', '')
+    checkAllDone()
     nextActor(button)
 
 $ ->
