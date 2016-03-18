@@ -6,6 +6,7 @@ table
       th Person
       th Product
       th Count
+      th Weighted
       th
       th
       th
@@ -16,6 +17,7 @@ table
         td = like.person_id
         td = like.product_id
         td = like.count
+        td = like.weighted
         td = link_to 'Show', like
         td = link_to 'Edit', edit_like_path(like)
         td = link_to 'Destroy', like, data: {:confirm => 'Are you sure?'}, :method => :delete

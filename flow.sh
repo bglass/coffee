@@ -24,7 +24,8 @@ rails g scaffold order
 rails g scaffold product name:string
 rails g scaffold person name:string feature:string
 
-rails g scaffold like person_id:integer product_id:integer count:integer
+rails g scaffold like person_id:integer product_id:integer count:integer weighted:float
+
 rails g scaffold choice order_id:integer person_id:integer product_id:integer
 rails g scaffold contact person_id:integer person_id:integer count:integer
 

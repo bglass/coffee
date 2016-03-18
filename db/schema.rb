@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160313142653) do
+ActiveRecord::Schema.define(version: 20160318213149) do
 
   create_table "choices", force: :cascade do |t|
     t.integer  "order_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20160313142653) do
     t.integer  "person_id"
     t.integer  "product_id"
     t.integer  "count"
+    t.float    "weighted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

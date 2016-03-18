@@ -103,6 +103,6 @@ $ ->
 
     data = {}
     data['order'] = choice
-    $.post("/static_pages/datadrop", data);
+    $.post("/orders", data);
 
     return

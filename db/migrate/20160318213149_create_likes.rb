@@ -4,6 +4,7 @@ class CreateLikes < ActiveRecord::Migration
       t.integer :person_id
       t.integer :product_id
       t.integer :count
+      t.float :weighted
 
       t.timestamps null: false
     end

@@ -1,1 +1,1 @@
-json.extract! @like, :id, :person_id, :product_id, :count, :created_at, :updated_at
+json.extract! @like, :id, :person_id, :product_id, :count, :weighted, :created_at, :updated_at

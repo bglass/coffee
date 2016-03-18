@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :likes
   resources :contacts
   resources :choices
-  resources :likes
   resources :people
   resources :products
   resources :orders

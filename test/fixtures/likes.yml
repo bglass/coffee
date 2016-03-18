@@ -4,8 +4,10 @@ one:
   person_id: 1
   product_id: 1
   count: 1
+  weighted: 1.5
 
 two:
   person_id: 1
   product_id: 1
   count: 1
+  weighted: 1.5

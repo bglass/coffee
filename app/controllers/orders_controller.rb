@@ -14,8 +14,6 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    # @order = Order.new
-    @pages    = %w[group drinks summary]
     @products = Product.all
     @people   = Person.all
   end
@@ -27,15 +25,28 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+    order_form = params.fetch(:order)
 
+
+    order_form.each do |name, drink|
+      person  = Person.where( :name => name ).first
+      product = Product.where(:name => drink).first
+
+      unless like = Like.where(:person_id => person.id, :product_id => product.id).first
+       like  = Like.new(:person_id => person.id, :product_id => product.id)
+      end
+      like.count ||= 0
+      like.count  += 1
+      like.weighted ||= 0.0
+      like.weighted  *= 0.9
+      like.weighted  += 1.0
+      like.save
+    end
+binding.pry
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+        format.json { @order.id }
+        binding.pry
       end
     end
   end
