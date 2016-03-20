@@ -42,7 +42,6 @@ class OrdersController < ApplicationController
       like.weighted  += 1.0
       like.save
     end
-binding.pry
     respond_to do |format|
       if @order.save
         format.json { @order.id }

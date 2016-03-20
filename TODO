@@ -17,9 +17,10 @@
 
 + disable done until everybody has a choice or guess
 
++ process order on server side
+
 <---
 
-- process order on server side
   - guess drinks
 
 - enter real products, (bilingual+price)
